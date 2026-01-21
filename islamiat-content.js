@@ -812,6 +812,62 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
-    islamiatContent.innerHTML = content;
+    // Add MCQ Test
+    const islamiatMCQs = [
+        {
+            question: "How many pillars (Arkan) are there in Islam?",
+            options: ["3", "4", "5", "6"],
+            correct: 2
+        },
+        {
+            question: "What is the first pillar of Islam?",
+            options: ["Salah", "Sawm", "Kalimah (Shahada)", "Zakat"],
+            correct: 2
+        },
+        {
+            question: "How many times must Muslims pray (Salah) daily?",
+            options: ["3", "4", "5", "6"],
+            correct: 2
+        },
+        {
+            question: "In which month do Muslims fast (Sawm)?",
+            options: ["Muharram", "Ramadan", "Shawwal", "Rajab"],
+            correct: 1
+        },
+        {
+            question: "What is Zakat?",
+            options: ["Prayer", "Fasting", "Charity/Alms", "Pilgrimage"],
+            correct: 2
+        },
+        {
+            question: "What is the pilgrimage to Makkah called?",
+            options: ["Umrah", "Hajj", "Ziyarat", "Tawaf"],
+            correct: 1
+        },
+        {
+            question: "How many prophets are mentioned in the Quran approximately?",
+            options: ["15", "20", "25", "30"],
+            correct: 2
+        },
+        {
+            question: "Who was the last Prophet of Islam?",
+            options: ["Hazrat Isa (AS)", "Hazrat Musa (AS)", "Hazrat Muhammad (PBUH)", "Hazrat Ibrahim (AS)"],
+            correct: 2
+        },
+        {
+            question: "What is the holy book of Muslims?",
+            options: ["Torah", "Bible", "Quran", "Zabur"],
+            correct: 2
+        },
+        {
+            question: "How many articles of faith (Iman) are there?",
+            options: ["4", "5", "6", "7"],
+            correct: 2
+        }
+    ];
+    
+    window.islamiatMCQs = islamiatMCQs;
+    
+    islamiatContent.innerHTML = content + createMCQTest('islamiat', islamiatMCQs);
     reloadQA();
 });
