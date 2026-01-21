@@ -932,6 +932,62 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
-    generalScienceContent.innerHTML = content;
+    // Add MCQ Test
+    const generalscienceMCQs = [
+        {
+            question: "What is the chemical symbol for water?",
+            options: ["H2O", "CO2", "O2", "NaCl"],
+            correct: 0
+        },
+        {
+            question: "What is the largest organ in the human body?",
+            options: ["Heart", "Liver", "Skin", "Brain"],
+            correct: 2
+        },
+        {
+            question: "What is the speed of light?",
+            options: ["300,000 km/s", "150,000 km/s", "450,000 km/s", "600,000 km/s"],
+            correct: 0
+        },
+        {
+            question: "Which planet is known as the Red Planet?",
+            options: ["Venus", "Mars", "Jupiter", "Saturn"],
+            correct: 1
+        },
+        {
+            question: "What gas do plants absorb from the atmosphere?",
+            options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+            correct: 2
+        },
+        {
+            question: "What is the unit of electric current?",
+            options: ["Volt", "Watt", "Ampere", "Ohm"],
+            correct: 2
+        },
+        {
+            question: "Which vitamin is produced when skin is exposed to sunlight?",
+            options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+            correct: 3
+        },
+        {
+            question: "What is the boiling point of water at sea level?",
+            options: ["90°C", "100°C", "110°C", "120°C"],
+            correct: 1
+        },
+        {
+            question: "Which organ pumps blood throughout the body?",
+            options: ["Lungs", "Liver", "Heart", "Kidney"],
+            correct: 2
+        },
+        {
+            question: "What is the most abundant gas in Earth's atmosphere?",
+            options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+            correct: 2
+        }
+    ];
+    
+    window.generalscienceMCQs = generalscienceMCQs;
+    
+    generalScienceContent.innerHTML = content + createMCQTest('generalscience', generalscienceMCQs);
     reloadQA();
 });
