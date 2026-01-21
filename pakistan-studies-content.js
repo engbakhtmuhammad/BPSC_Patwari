@@ -1127,6 +1127,62 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
-    pakistanStudiesContent.innerHTML = content;
+    // Add MCQ Test
+    const pakistanstudiesMCQs = [
+        {
+            question: "What is the ideology of Pakistan based on?",
+            options: ["Three-Nation Theory", "Two-Nation Theory", "One-Nation Theory", "Multi-Nation Theory"],
+            correct: 1
+        },
+        {
+            question: "When was Pakistan created?",
+            options: ["August 14, 1947", "August 15, 1947", "July 14, 1947", "September 14, 1947"],
+            correct: 0
+        },
+        {
+            question: "Who is known as the Father of the Nation in Pakistan?",
+            options: ["Allama Iqbal", "Liaquat Ali Khan", "Quaid-e-Azam Muhammad Ali Jinnah", "Sir Syed Ahmad Khan"],
+            correct: 2
+        },
+        {
+            question: "Which city was the first capital of Pakistan?",
+            options: ["Islamabad", "Lahore", "Karachi", "Rawalpindi"],
+            correct: 2
+        },
+        {
+            question: "When was the Lahore Resolution passed?",
+            options: ["March 23, 1940", "March 23, 1947", "August 14, 1947", "March 23, 1956"],
+            correct: 0
+        },
+        {
+            question: "What is the national language of Pakistan?",
+            options: ["Punjabi", "Sindhi", "Urdu", "English"],
+            correct: 2
+        },
+        {
+            question: "Which province is the largest by area in Pakistan?",
+            options: ["Punjab", "Sindh", "Balochistan", "Khyber Pakhtunkhwa"],
+            correct: 2
+        },
+        {
+            question: "When was the first Constitution of Pakistan adopted?",
+            options: ["1947", "1956", "1962", "1973"],
+            correct: 1
+        },
+        {
+            question: "What is the meaning of 'Pakistan'?",
+            options: ["Land of Muslims", "Land of the Pure", "Land of Freedom", "Land of Peace"],
+            correct: 1
+        },
+        {
+            question: "Who wrote 'Allahabad Address' in 1930?",
+            options: ["Quaid-e-Azam", "Allama Iqbal", "Liaquat Ali Khan", "Sir Syed Ahmad Khan"],
+            correct: 1
+        }
+    ];
+    
+    window.pakistanstudiesMCQs = pakistanstudiesMCQs;
+    
+    pakistanStudiesContent.innerHTML = content + createMCQTest('pakistanstudies', pakistanstudiesMCQs);
     reloadQA();
 });

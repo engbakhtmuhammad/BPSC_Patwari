@@ -612,6 +612,62 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
-    mathematicsContent.innerHTML = content;
+    // Add MCQ Test
+    const mathematicsMCQs = [
+        {
+            question: "What is 15% of 200?",
+            options: ["25", "30", "35", "40"],
+            correct: 1
+        },
+        {
+            question: "If x + 5 = 12, what is the value of x?",
+            options: ["5", "6", "7", "8"],
+            correct: 2
+        },
+        {
+            question: "What is the area of a rectangle with length 8 cm and width 5 cm?",
+            options: ["13 cm²", "26 cm²", "40 cm²", "48 cm²"],
+            correct: 2
+        },
+        {
+            question: "What is the square root of 144?",
+            options: ["10", "11", "12", "13"],
+            correct: 2
+        },
+        {
+            question: "What is 3/4 + 1/4?",
+            options: ["1/2", "4/8", "1", "2"],
+            correct: 2
+        },
+        {
+            question: "What is the value of π (pi) approximately?",
+            options: ["2.14", "3.14", "4.14", "5.14"],
+            correct: 1
+        },
+        {
+            question: "If a triangle has angles 60°, 60°, and 60°, what type of triangle is it?",
+            options: ["Scalene", "Isosceles", "Equilateral", "Right-angled"],
+            correct: 2
+        },
+        {
+            question: "What is 2³ (2 to the power of 3)?",
+            options: ["6", "8", "9", "12"],
+            correct: 1
+        },
+        {
+            question: "What is the perimeter of a square with side 6 cm?",
+            options: ["12 cm", "18 cm", "24 cm", "36 cm"],
+            correct: 2
+        },
+        {
+            question: "What is 0.5 as a fraction?",
+            options: ["1/3", "1/2", "1/4", "2/3"],
+            correct: 1
+        }
+    ];
+    
+    window.mathematicsMCQs = mathematicsMCQs;
+    
+    mathematicsContent.innerHTML = content + createMCQTest('mathematics', mathematicsMCQs);
     reloadQA();
 });

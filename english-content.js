@@ -1082,6 +1082,72 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
-    englishContent.innerHTML = content;
+    // Add MCQ Test
+    const englishMCQs = [
+        {
+            question: "Which part of speech is the word 'quickly'?",
+            options: ["Adjective", "Adverb", "Verb", "Noun"],
+            correct: 1
+        },
+        {
+            question: "What is the plural form of 'child'?",
+            options: ["Childs", "Children", "Childes", "Childrens"],
+            correct: 1
+        },
+        {
+            question: "Which sentence is in passive voice?",
+            options: [
+                "Ali writes a letter",
+                "A letter is written by Ali",
+                "Ali is writing a letter",
+                "Ali has written a letter"
+            ],
+            correct: 1
+        },
+        {
+            question: "What type of noun is 'happiness'?",
+            options: ["Proper Noun", "Common Noun", "Abstract Noun", "Collective Noun"],
+            correct: 2
+        },
+        {
+            question: "Which is the correct superlative form of 'good'?",
+            options: ["Gooder", "Goodest", "Better", "Best"],
+            correct: 3
+        },
+        {
+            question: "What is the past tense of 'go'?",
+            options: ["Goed", "Went", "Gone", "Going"],
+            correct: 1
+        },
+        {
+            question: "Which sentence uses correct subject-verb agreement?",
+            options: [
+                "The students is playing",
+                "The students are playing",
+                "The students am playing",
+                "The students be playing"
+            ],
+            correct: 1
+        },
+        {
+            question: "What type of pronoun is 'myself'?",
+            options: ["Personal Pronoun", "Reflexive Pronoun", "Relative Pronoun", "Demonstrative Pronoun"],
+            correct: 1
+        },
+        {
+            question: "Which is a coordinating conjunction?",
+            options: ["Because", "Although", "And", "When"],
+            correct: 2
+        },
+        {
+            question: "What is the correct article: '__ university'?",
+            options: ["a", "an", "the", "no article"],
+            correct: 0
+        }
+    ];
+    
+    window.englishMCQs = englishMCQs;
+    
+    englishContent.innerHTML = content + createMCQTest('english', englishMCQs);
     reloadQA();
 });
