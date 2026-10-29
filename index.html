@@ -3,40 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BPSC Patwari Exam Preparation - Complete Study Material</title>
+    <title>BPSC Exam Preparation | Patwari &amp; Job Interview Guide</title>
+    <meta name="description" content="Complete MCQ study material for the BPSC Patwari exam, plus interview preparation for the Assistant IT Developer post at BSDI.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visuals.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎓 BPSC Patwari Exam Preparation</h1>
-            <p class="subtitle">Balochistan Public Service Commission - Complete MCQs Study Material</p>
-            <p class="exam-info">📚 Matriculation Level (9th & 10th) | 📝 Objective MCQs | 🎯 Comprehensive Coverage</p>
-        </header>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <button class="to-top" id="to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-        <nav class="subject-tabs">
-            <button class="tab-button active" onclick="showSubject('english')">
-                📖 English
-            </button>
-            <button class="tab-button" onclick="showSubject('pakistan-studies')">
-                🇵🇰 Pakistan Studies
-            </button>
-            <button class="tab-button" onclick="showSubject('mathematics')">
-                🔢 Mathematics
-            </button>
-            <button class="tab-button" onclick="showSubject('islamiat')">
-                🕌 Islamiat
-            </button>
-            <button class="tab-button" onclick="showSubject('general-science')">
-                🔬 General Science
-            </button>
-        </nav>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container header-top-content">
+                <span><i class="fas fa-graduation-cap"></i> Matriculation Level (9th &amp; 10th) | Objective MCQs</span>
+                <span><i class="fas fa-location-dot"></i> Balochistan Public Service Commission</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-main-content">
+                <div class="logo">
+                    <div class="logo-mark"><i class="fas fa-book-open-reader"></i></div>
+                    <div class="logo-text">
+                        <span class="logo-title">BPSC Exam Prep</span>
+                        <span class="logo-subtitle">Study Material &amp; Interview Guide</span>
+                    </div>
+                </div>
 
+                <nav class="subject-tabs">
+                    <button class="tab-button active" onclick="showSubject('english')">
+                        <i class="fas fa-language"></i> English
+                    </button>
+                    <button class="tab-button" onclick="showSubject('pakistan-studies')">
+                        <i class="fas fa-flag"></i> Pakistan Studies
+                    </button>
+                    <button class="tab-button" onclick="showSubject('mathematics')">
+                        <i class="fas fa-square-root-variable"></i> Mathematics
+                    </button>
+                    <button class="tab-button" onclick="showSubject('islamiat')">
+                        <i class="fas fa-mosque"></i> Islamiat
+                    </button>
+                    <button class="tab-button" onclick="showSubject('general-science')">
+                        <i class="fas fa-flask"></i> General Science
+                    </button>
+                    <button class="tab-button tab-career" onclick="showSubject('it-interview')">
+                        <i class="fas fa-briefcase"></i> IT Interview Prep
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="container hero-content">
+            <div class="hero-badge"><i class="fas fa-star"></i> Complete MCQs Study Material</div>
+            <h1>Prepare with Confidence for <span>BPSC Patwari</span> and Your IT Interview</h1>
+            <p class="hero-description">Concept-wise questions and answers, practice tests for every subject, and a dedicated interview guide for the Assistant IT Developer post at BSDI, available in <strong>English, اردو and Roman Urdu</strong>.</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-value" data-count="5">0</div><div class="hero-stat-label">Exam Subjects</div></div>
+                <div class="hero-stat"><div class="hero-stat-value" data-count="190" data-suffix="+">0</div><div class="hero-stat-label">Q&amp;A Topics</div></div>
+                <div class="hero-stat"><div class="hero-stat-value" data-count="6">0</div><div class="hero-stat-label">Practice Tests</div></div>
+                <div class="hero-stat"><div class="hero-stat-value" data-count="1">0</div><div class="hero-stat-label">Interview Guide</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTENT ==================== -->
+    <main class="main">
         <!-- English Subject -->
         <div id="english" class="subject-content active">
             <div class="subject-header">
-                <h2>📖 English (9th & 10th Classes)</h2>
-                <p class="book-info">📘 Grammar Composition and Translation for Secondary Classes<br>
+                <h2>English (9th &amp; 10th Classes)</h2>
+                <p class="book-info">Grammar Composition and Translation for Secondary Classes<br>
                 Publisher: New College Publication Quetta for BBISE<br>
                 Authors: Mr. Kaleem Ullah, Mrs. Fouzia Durani</p>
             </div>
@@ -46,8 +97,8 @@
         <!-- Pakistan Studies Subject -->
         <div id="pakistan-studies" class="subject-content">
             <div class="subject-header">
-                <h2>🇵🇰 Pakistan Studies (9th & 10th Classes)</h2>
-                <p class="book-info">📘 Publisher: New College Publication, Quetta for BBISE<br>
+                <h2>Pakistan Studies (9th &amp; 10th Classes)</h2>
+                <p class="book-info">Publisher: New College Publication, Quetta for BBISE<br>
                 Authors: Prof. Dr. Ahmad Saeed Khattak, Prof. Dr. Muhammad Nawaz, Prof. Muhammad Naseer Khan</p>
             </div>
             <div id="pakistan-studies-content"></div>
@@ -56,8 +107,8 @@
         <!-- Mathematics Subject -->
         <div id="mathematics" class="subject-content">
             <div class="subject-header">
-                <h2>🔢 Mathematics (9th & 10th Classes)</h2>
-                <p class="book-info">📘 Publisher: New College Publication Quetta for BBISE<br>
+                <h2>Mathematics (9th &amp; 10th Classes)</h2>
+                <p class="book-info">Publisher: New College Publication Quetta for BBISE<br>
                 Authors: Mr. Abdul Khaliq Bughlani, Mr. Muhammad Asif, Ms. Shaista Panezai</p>
             </div>
             <div id="mathematics-content"></div>
@@ -66,8 +117,8 @@
         <!-- Islamiat Subject -->
         <div id="islamiat" class="subject-content">
             <div class="subject-header">
-                <h2>🕌 Islamiat (9th & 10th Classes)</h2>
-                <p class="book-info">📘 Publisher: New College Publication, Quetta for BBISE<br>
+                <h2>Islamiat (9th &amp; 10th Classes)</h2>
+                <p class="book-info">Publisher: New College Publication, Quetta for BBISE<br>
                 Authors: Ms. Sabeen Akbar, Mawlana Muhammad Hashim Kakar Panezai, Mr. Zeeshan Hashmi</p>
             </div>
             <div id="islamiat-content"></div>
@@ -76,19 +127,54 @@
         <!-- General Science Subject -->
         <div id="general-science" class="subject-content">
             <div class="subject-header">
-                <h2>🔬 General Science (9th & 10th Classes)</h2>
-                <p class="book-info">📘 Publisher: Fahad Publishing Company, Quetta for BBISE<br>
+                <h2>General Science (9th &amp; 10th Classes)</h2>
+                <p class="book-info">Publisher: Fahad Publishing Company, Quetta for BBISE<br>
                 Author: M S Rajput CS</p>
             </div>
             <div id="general-science-content"></div>
         </div>
 
-        <footer>
-            <p>✨ Comprehensive Study Material for BPSC Patwari Exam</p>
-            <p>💡 Click on any question to expand and view detailed answers with examples</p>
-            <p>🎯 Best of luck with your preparation!</p>
-        </footer>
-    </div>
+        <!-- Job Interview Preparation: Assistant IT Developer (BSDI) -->
+        <div id="it-interview" class="subject-content">
+            <div class="subject-header career-header">
+                <h2>Job Interview Preparation: Assistant IT Developer (BPS-06)</h2>
+                <p class="book-info"><i class="fas fa-building-columns"></i> Balochistan Special Development Initiative (BSDI) | Program Implementation Unit (PIU)<br>
+                <i class="fas fa-location-dot"></i> Planning &amp; Development Department, Government of Balochistan, Quetta<br>
+                <i class="fas fa-file-contract"></i> Contract, initial 1 year | Ad Ref: AB No. 3852 / 1-10-2026<br>
+                <i class="fas fa-language"></i> Available in English, اردو and Roman Urdu: use the language switch below</p>
+            </div>
+            <div id="it-interview-content"></div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-text">BPSC Exam Prep</div>
+                    <p class="footer-description">A self-study companion with concept-wise questions and answers, practice MCQs and an interview guide. This is an independent study aid and is not an official publication of any government body.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">How to Use</h4>
+                    <ul class="footer-list">
+                        <li><i class="fas fa-chevron-right"></i> Pick a subject from the top menu</li>
+                        <li><i class="fas fa-chevron-right"></i> Click a question to see the answer</li>
+                        <li><i class="fas fa-chevron-right"></i> Finish with the practice test</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Study Tips</h4>
+                    <ul class="footer-list">
+                        <li><i class="fas fa-check"></i> Revise a little every day</li>
+                        <li><i class="fas fa-check"></i> Understand, do not just memorize</li>
+                        <li><i class="fas fa-check"></i> Retake tests until you score 75%+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">Best of luck with your preparation!</div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
     <script src="english-content.js"></script>
@@ -96,5 +182,9 @@
     <script src="mathematics-content.js"></script>
     <script src="islamiat-content.js"></script>
     <script src="general-science-content.js"></script>
+    <script src="it-interview-i18n.js"></script>
+    <script src="it-visuals.js"></script>
+    <script src="it-interview-content.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>

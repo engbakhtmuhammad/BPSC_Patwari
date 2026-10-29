@@ -16,10 +16,12 @@ function showSubject(subjectId) {
     document.getElementById(subjectId).classList.add('active');
 
     // Add active class to clicked tab
-    event.target.classList.add('active');
+    event.currentTarget.classList.add('active');
 
     // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    const mainTop = document.querySelector('.main').getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: mainTop - headerHeight - 16, behavior: 'smooth' });
 }
 
 // Initialize Q&A accordion functionality
@@ -72,7 +74,7 @@ function createQAItem(question, answer) {
 function createTopicSection(icon, title, description, qaItems) {
     return `
         <div class="topic-section">
-            <h3>${icon} ${title}</h3>
+            <h3><span class="topic-icon">${icon}</span><span>${title}</span></h3>
             ${description ? `<div class="topic-description">${description}</div>` : ''}
             ${qaItems}
         </div>
@@ -142,7 +144,7 @@ function submitTest(subject) {
     // Check answers and mark them
     questions.forEach((q, index) => {
         const userAnswer = answers[index];
-        const questionItem = document.querySelector(`[data-index="${index}"]`);
+        const questionItem = document.querySelector(`#mcq-questions-${subject} [data-index="${index}"]`);
         const options = questionItem.querySelectorAll('.mcq-option');
         
         options.forEach((option, optIndex) => {
@@ -177,18 +179,27 @@ function submitTest(subject) {
         message = 'Good work! A bit more practice will help.';
     }
     
+    const circumference = 2 * Math.PI * 52;
     resultDiv.innerHTML = `
         <div class="result-card ${resultClass}">
+            <div class="result-ring">
+                <svg viewBox="0 0 120 120">
+                    <circle class="rr-bg" cx="60" cy="60" r="52"></circle>
+                    <circle class="rr-fg" cx="60" cy="60" r="52" style="stroke-dasharray:${circumference};stroke-dashoffset:${circumference}"></circle>
+                </svg>
+                <div class="result-percentage">0%</div>
+            </div>
             <div class="result-emoji">${emoji}</div>
             <div class="result-score">
                 <h3>Your Score: ${correctCount}/${totalQuestions}</h3>
-                <div class="result-percentage">${percentage}%</div>
             </div>
             <p class="result-message">${message}</p>
             <button class="retry-btn" onclick="retryTest('${subject}')">🔄 Try Again</button>
         </div>
     `;
-    
+
+    animateResult(resultDiv, circumference, correctCount / totalQuestions, Number(percentage));
+
     resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
@@ -210,5 +221,46 @@ function retryTest(subject) {
     document.getElementById(`test-result-${subject}`).innerHTML = '';
     
     // Scroll to top of test
-    document.querySelector('.mcq-test-section').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(`mcq-questions-${subject}`).closest('.mcq-test-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+// Animated score ring, count-up and confetti for good scores
+function animateResult(resultDiv, circumference, fraction, percentage) {
+    const fg = resultDiv.querySelector('.rr-fg');
+    const label = resultDiv.querySelector('.result-percentage');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    requestAnimationFrame(() => {
+        fg.style.strokeDashoffset = circumference * (1 - fraction);
+    });
+
+    if (reduce) {
+        label.textContent = percentage + '%';
+    } else {
+        const start = performance.now();
+        const duration = 1400;
+        const tick = now => {
+            const t = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+            label.textContent = (percentage * eased).toFixed(percentage % 1 ? 1 : 0) + '%';
+            if (t < 1) requestAnimationFrame(tick);
+            else label.textContent = percentage + '%';
+        };
+        requestAnimationFrame(tick);
+    }
+
+    if (percentage >= 75 && !reduce) {
+        const card = resultDiv.querySelector('.result-card');
+        const colors = ['#f0b800', '#f5c933', '#ffffff', '#6ee7b7', '#34d399'];
+        for (let i = 0; i < 46; i++) {
+            const piece = document.createElement('span');
+            piece.className = 'confetti';
+            piece.style.left = Math.random() * 100 + '%';
+            piece.style.background = colors[i % colors.length];
+            piece.style.animationDelay = Math.random() * 0.8 + 's';
+            piece.style.animationDuration = 2 + Math.random() * 1.6 + 's';
+            card.appendChild(piece);
+        }
+    }
 }
