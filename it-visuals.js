@@ -642,4 +642,8 @@
             box.dataset.state = state;
         }
     };
+
+    // Building blocks for other interview sections
+    window.ITViz.kit = { T, t3, wrap, flow, hub, stats, cards, checklist, topology, TRY };
+    window.ITViz.register = map => Object.assign(V, map);
 })();

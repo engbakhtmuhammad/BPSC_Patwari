@@ -448,11 +448,11 @@
     border-radius: 12px;
 }
 
-#it-interview[data-lang="ur"] .v-check li {
+.interview-root[data-lang="ur"] .v-check li {
     flex-direction: row-reverse;
 }
 
-#it-interview[data-lang="ur"] .v-check li > span:last-child {
+.interview-root[data-lang="ur"] .v-check li > span:last-child {
     flex: 1;
 }
 
@@ -1465,17 +1465,17 @@
 /* ==========================================================
    LANGUAGE AND RESPONSIVE TWEAKS
    ========================================================== */
-#it-interview[data-lang="ur"] .v-lbl,
-#it-interview[data-lang="ur"] .v-card h6,
-#it-interview[data-lang="ur"] .v-card p,
-#it-interview[data-lang="ur"] .v-spoke-lbl,
-#it-interview[data-lang="ur"] .v-stat-l,
-#it-interview[data-lang="ur"] .v-lane-note {
+.interview-root[data-lang="ur"] .v-lbl,
+.interview-root[data-lang="ur"] .v-card h6,
+.interview-root[data-lang="ur"] .v-card p,
+.interview-root[data-lang="ur"] .v-spoke-lbl,
+.interview-root[data-lang="ur"] .v-stat-l,
+.interview-root[data-lang="ur"] .v-lane-note {
     text-align: center;
 }
 
-#it-interview[data-lang="ur"] .v-lane h5,
-#it-interview[data-lang="ur"] .viz-cap {
+.interview-root[data-lang="ur"] .v-lane h5,
+.interview-root[data-lang="ur"] .viz-cap {
     text-align: center;
 }
 
@@ -1513,15 +1513,90 @@
 }
 
 /* right-to-left flow in Urdu */
-#it-interview[data-lang="ur"] .v-flow {
+.interview-root[data-lang="ur"] .v-flow {
     direction: rtl;
 }
 
-#it-interview[data-lang="ur"] .v-arrow {
+.interview-root[data-lang="ur"] .v-arrow {
     transform: scaleX(-1);
 }
 
-#it-interview[data-lang="ur"] .v-num {
+.interview-root[data-lang="ur"] .v-num {
     left: auto;
     right: -6px;
+}
+
+/* ---------- Active Directory tree ---------- */
+.v-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    direction: ltr;
+}
+
+.v-tnode {
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.v-tnode small {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.v-tnode.root { background: var(--primary-700); color: #fff; }
+.v-tnode.ou { background: var(--accent-500); color: var(--gray-900); }
+
+.v-tbranch {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.v-tcol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 130px;
+}
+
+.v-tleaf {
+    width: 100%;
+    padding: 5px 10px;
+    background: #fff;
+    border: 1px solid var(--primary-100);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.v-tgpo {
+    padding: 8px 16px;
+    background: var(--accent-50);
+    border: 1px dashed var(--accent-500);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+    text-align: center;
+}
+
+.qa-answer.active .v-tnode.root,
+.qa-answer.active .v-tcol,
+.qa-answer.active .v-tgpo {
+    animation: stepIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: calc(var(--i) * 0.3s);
 }

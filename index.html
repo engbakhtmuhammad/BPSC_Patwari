@@ -56,7 +56,10 @@
                         <i class="fas fa-flask"></i> General Science
                     </button>
                     <button class="tab-button tab-career" onclick="showSubject('it-interview')">
-                        <i class="fas fa-briefcase"></i> IT Interview Prep
+                        <i class="fas fa-briefcase"></i> IT Developer Prep
+                    </button>
+                    <button class="tab-button tab-career" onclick="showSubject('l2-interview')">
+                        <i class="fas fa-headset"></i> L2 Support Prep
                     </button>
                 </nav>
             </div>
@@ -71,12 +74,12 @@
         <div class="container hero-content">
             <div class="hero-badge"><i class="fas fa-star"></i> Complete MCQs Study Material</div>
             <h1>Prepare with Confidence for <span>BPSC Patwari</span> and Your IT Interview</h1>
-            <p class="hero-description">Concept-wise questions and answers, practice tests for every subject, and a dedicated interview guide for the Assistant IT Developer post at BSDI, available in <strong>English, اردو and Roman Urdu</strong>.</p>
+            <p class="hero-description">Concept-wise questions and answers, practice tests for every subject, and dedicated interview guides for the Assistant IT Developer post at BSDI and the IT Assistant Level 2 Support post at the Tele-Health Nerve Centre, available in <strong>English, اردو and Roman Urdu</strong>.</p>
             <div class="hero-stats">
                 <div class="hero-stat"><div class="hero-stat-value" data-count="5">0</div><div class="hero-stat-label">Exam Subjects</div></div>
-                <div class="hero-stat"><div class="hero-stat-value" data-count="190" data-suffix="+">0</div><div class="hero-stat-label">Q&amp;A Topics</div></div>
-                <div class="hero-stat"><div class="hero-stat-value" data-count="6">0</div><div class="hero-stat-label">Practice Tests</div></div>
-                <div class="hero-stat"><div class="hero-stat-value" data-count="1">0</div><div class="hero-stat-label">Interview Guide</div></div>
+                <div class="hero-stat"><div class="hero-stat-value" data-count="220" data-suffix="+">0</div><div class="hero-stat-label">Q&amp;A Topics</div></div>
+                <div class="hero-stat"><div class="hero-stat-value" data-count="7">0</div><div class="hero-stat-label">Practice Tests</div></div>
+                <div class="hero-stat"><div class="hero-stat-value" data-count="2">0</div><div class="hero-stat-label">Interview Guides</div></div>
             </div>
         </div>
     </section>
@@ -135,7 +138,7 @@
         </div>
 
         <!-- Job Interview Preparation: Assistant IT Developer (BSDI) -->
-        <div id="it-interview" class="subject-content">
+        <div id="it-interview" class="subject-content interview-root">
             <div class="subject-header career-header">
                 <h2>Job Interview Preparation: Assistant IT Developer (BPS-06)</h2>
                 <p class="book-info"><i class="fas fa-building-columns"></i> Balochistan Special Development Initiative (BSDI) | Program Implementation Unit (PIU)<br>
@@ -144,6 +147,17 @@
                 <i class="fas fa-language"></i> Available in English, اردو and Roman Urdu: use the language switch below</p>
             </div>
             <div id="it-interview-content"></div>
+        </div>
+
+        <!-- Job Interview Preparation: IT Assistant, Level 2 Support (Tele-Health Nerve Centre Quetta) -->
+        <div id="l2-interview" class="subject-content interview-root">
+            <div class="subject-header career-header">
+                <h2>Job Interview Preparation: IT Assistant, Level 2 Support</h2>
+                <p class="book-info"><i class="fas fa-hospital"></i> Tele-Health Nerve Centre, Quetta | 5 posts | Rs. 70,000<br>
+                <i class="fas fa-graduation-cap"></i> Bachelor's in IT / CS or equivalent | Women candidates especially encouraged<br>
+                <i class="fas fa-language"></i> Available in English, اردو and Roman Urdu: use the language switch below</p>
+            </div>
+            <div id="l2-interview-content"></div>
         </div>
     </main>
 
@@ -185,6 +199,8 @@
     <script src="it-interview-i18n.js"></script>
     <script src="it-visuals.js"></script>
     <script src="it-interview-content.js"></script>
+    <script src="interview-engine.js"></script>
+    <script src="l2-interview-data.js"></script>
     <script src="animations.js"></script>
 </body>
 </html>
