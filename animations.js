@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ---- Scroll reveal ----
     if (reduce || !('IntersectionObserver' in window)) return;
 
-    const selector = '.topic-section, .qa-item, .mcq-question-item, .resources, .timeline-wrap, .tl-item, .nav-card, .progress-card, .mcq-test-section, .subject-header';
+    const selector = '.lib-card, .lib-group-head, .topic-section, .qa-item, .mcq-question-item, .resources, .timeline-wrap, .tl-item, .nav-card, .progress-card, .mcq-test-section, .subject-header';
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

@@ -1,27 +1,18 @@
-// Tab switching functionality
-function showSubject(subjectId) {
-    // Hide all subject contents
-    const allContents = document.querySelectorAll('.subject-content');
-    allContents.forEach(content => {
-        content.classList.remove('active');
-    });
+// Show one panel (a subject, a job preparation or the home page). The menu is built in menu.js.
+function showSubject(subjectId, scroll) {
+    const target = document.getElementById(subjectId);
+    if (!target) return;
 
-    // Remove active class from all tabs
-    const allTabs = document.querySelectorAll('.tab-button');
-    allTabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
+    document.querySelectorAll('.subject-content').forEach(content => content.classList.remove('active'));
+    target.classList.add('active');
 
-    // Show selected subject
-    document.getElementById(subjectId).classList.add('active');
+    if (window.SiteMenu) window.SiteMenu.setActive(subjectId);
 
-    // Add active class to clicked tab
-    event.currentTarget.classList.add('active');
-
-    // Scroll to top
-    const headerHeight = document.querySelector('.header').offsetHeight;
-    const mainTop = document.querySelector('.main').getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: mainTop - headerHeight - 16, behavior: 'smooth' });
+    if (scroll !== false) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const mainTop = document.querySelector('.main').getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: mainTop - headerHeight - 16, behavior: 'smooth' });
+    }
 }
 
 // Initialize Q&A accordion functionality

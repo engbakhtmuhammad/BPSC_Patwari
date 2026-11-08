@@ -39,29 +39,7 @@
                     </div>
                 </div>
 
-                <nav class="subject-tabs">
-                    <button class="tab-button active" onclick="showSubject('english')">
-                        <i class="fas fa-language"></i> English
-                    </button>
-                    <button class="tab-button" onclick="showSubject('pakistan-studies')">
-                        <i class="fas fa-flag"></i> Pakistan Studies
-                    </button>
-                    <button class="tab-button" onclick="showSubject('mathematics')">
-                        <i class="fas fa-square-root-variable"></i> Mathematics
-                    </button>
-                    <button class="tab-button" onclick="showSubject('islamiat')">
-                        <i class="fas fa-mosque"></i> Islamiat
-                    </button>
-                    <button class="tab-button" onclick="showSubject('general-science')">
-                        <i class="fas fa-flask"></i> General Science
-                    </button>
-                    <button class="tab-button tab-career" onclick="showSubject('it-interview')">
-                        <i class="fas fa-briefcase"></i> IT Developer Prep
-                    </button>
-                    <button class="tab-button tab-career" onclick="showSubject('l2-interview')">
-                        <i class="fas fa-headset"></i> L2 Support Prep
-                    </button>
-                </nav>
+                <nav class="subject-tabs" id="site-nav" aria-label="Main menu"></nav>
             </div>
         </div>
     </header>
@@ -85,81 +63,7 @@
     </section>
 
     <!-- ==================== CONTENT ==================== -->
-    <main class="main">
-        <!-- English Subject -->
-        <div id="english" class="subject-content active">
-            <div class="subject-header">
-                <h2>English (9th &amp; 10th Classes)</h2>
-                <p class="book-info">Grammar Composition and Translation for Secondary Classes<br>
-                Publisher: New College Publication Quetta for BBISE<br>
-                Authors: Mr. Kaleem Ullah, Mrs. Fouzia Durani</p>
-            </div>
-            <div id="english-content"></div>
-        </div>
-
-        <!-- Pakistan Studies Subject -->
-        <div id="pakistan-studies" class="subject-content">
-            <div class="subject-header">
-                <h2>Pakistan Studies (9th &amp; 10th Classes)</h2>
-                <p class="book-info">Publisher: New College Publication, Quetta for BBISE<br>
-                Authors: Prof. Dr. Ahmad Saeed Khattak, Prof. Dr. Muhammad Nawaz, Prof. Muhammad Naseer Khan</p>
-            </div>
-            <div id="pakistan-studies-content"></div>
-        </div>
-
-        <!-- Mathematics Subject -->
-        <div id="mathematics" class="subject-content">
-            <div class="subject-header">
-                <h2>Mathematics (9th &amp; 10th Classes)</h2>
-                <p class="book-info">Publisher: New College Publication Quetta for BBISE<br>
-                Authors: Mr. Abdul Khaliq Bughlani, Mr. Muhammad Asif, Ms. Shaista Panezai</p>
-            </div>
-            <div id="mathematics-content"></div>
-        </div>
-
-        <!-- Islamiat Subject -->
-        <div id="islamiat" class="subject-content">
-            <div class="subject-header">
-                <h2>Islamiat (9th &amp; 10th Classes)</h2>
-                <p class="book-info">Publisher: New College Publication, Quetta for BBISE<br>
-                Authors: Ms. Sabeen Akbar, Mawlana Muhammad Hashim Kakar Panezai, Mr. Zeeshan Hashmi</p>
-            </div>
-            <div id="islamiat-content"></div>
-        </div>
-
-        <!-- General Science Subject -->
-        <div id="general-science" class="subject-content">
-            <div class="subject-header">
-                <h2>General Science (9th &amp; 10th Classes)</h2>
-                <p class="book-info">Publisher: Fahad Publishing Company, Quetta for BBISE<br>
-                Author: M S Rajput CS</p>
-            </div>
-            <div id="general-science-content"></div>
-        </div>
-
-        <!-- Job Interview Preparation: Assistant IT Developer (BSDI) -->
-        <div id="it-interview" class="subject-content interview-root">
-            <div class="subject-header career-header">
-                <h2>Job Interview Preparation: Assistant IT Developer (BPS-06)</h2>
-                <p class="book-info"><i class="fas fa-building-columns"></i> Balochistan Special Development Initiative (BSDI) | Program Implementation Unit (PIU)<br>
-                <i class="fas fa-location-dot"></i> Planning &amp; Development Department, Government of Balochistan, Quetta<br>
-                <i class="fas fa-file-contract"></i> Contract, initial 1 year | Ad Ref: AB No. 3852 / 1-10-2026<br>
-                <i class="fas fa-language"></i> Available in English, اردو and Roman Urdu: use the language switch below</p>
-            </div>
-            <div id="it-interview-content"></div>
-        </div>
-
-        <!-- Job Interview Preparation: IT Assistant, Level 2 Support (Tele-Health Nerve Centre Quetta) -->
-        <div id="l2-interview" class="subject-content interview-root">
-            <div class="subject-header career-header">
-                <h2>Job Interview Preparation: IT Assistant, Level 2 Support</h2>
-                <p class="book-info"><i class="fas fa-hospital"></i> Tele-Health Nerve Centre, Quetta | 5 posts | Rs. 70,000<br>
-                <i class="fas fa-graduation-cap"></i> Bachelor's in IT / CS or equivalent | Women candidates especially encouraged<br>
-                <i class="fas fa-language"></i> Available in English, اردو and Roman Urdu: use the language switch below</p>
-            </div>
-            <div id="l2-interview-content"></div>
-        </div>
-    </main>
+    <main class="main" id="main"><!-- panels are generated from menu.js --></main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer>
@@ -191,6 +95,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="menu.js"></script>
     <script src="english-content.js"></script>
     <script src="pakistan-studies-content.js"></script>
     <script src="mathematics-content.js"></script>
